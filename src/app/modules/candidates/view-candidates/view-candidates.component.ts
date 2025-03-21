@@ -6,11 +6,12 @@ import { RatingModule } from 'primeng/rating';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from "../../global/components/header/header.component";
 
 @Component({
   selector: 'app-view-candidates',
   standalone: true,
-  imports: [TableModule, TagModule, RatingModule, ButtonModule, CommonModule, FormsModule],
+  imports: [TableModule, TagModule, RatingModule, ButtonModule, CommonModule, FormsModule, HeaderComponent],
   templateUrl: './view-candidates.component.html',
   styleUrl: './view-candidates.component.scss'
 })

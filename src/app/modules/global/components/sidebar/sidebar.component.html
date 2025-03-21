@@ -1,0 +1,22 @@
+<div class="shadow-div" [ngStyle]="{display: isOpen ? 'inline' : 'none',opacity: isOpen ? '1' : '0'}"
+  (click)="customClose()"></div>
+
+<p-sidebar [style]="{ width: '100%', maxWidth: '350px' }" class="shopping-cart" #sidebarRef [(visible)]="isOpen"
+  [modal]="false" position="left">
+  <ng-template pTemplate="headless">
+
+    <div class="sidebar_title">
+
+      <h2>RecruitIQ</h2>
+
+    </div>
+
+    <div class="buttons_container">
+
+      <div class="navigation_button"> <span class="pi pi-users"></span> Gerenciar Vagas</div>
+      <div class="navigation_button"> <span class="pi pi-cog"></span> Configurações</div>
+
+    </div>
+
+  </ng-template>
+</p-sidebar>
