@@ -1,0 +1,46 @@
+<div class="whole_page">
+
+  @if(!isLoading) {
+  <div class="content_container">
+    <div class="table">
+      <p-table [value]="roles" sortField="Nome da Vaga" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Nome da Vaga</th>
+            <th>Status Vaga</th>
+            <th>Data de Abertura</th>
+            <th>Data de Finzalização</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-role>
+          <tr class="role_cell" (click)="goToRole(role._id)">
+            <td class="role_title h-4rem">{{ role.title }}</td>
+            <td class="flex justify-content-center align-items-center h-4rem">
+              @if(true) {
+              <span class="pi pi-check-circle text-green-600"></span>
+              } @else {
+              <span class="pi pi-times-circle text-red-600"></span>
+
+              }
+            </td>
+            <td class="h-4rem">01/01/1999</td>
+            <td class="h-4rem">01/01/1999</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+
+    <div class="content_footer">
+
+      <p-button label="Adicionar Novas Vagas" severity="success" />
+      <p-button label="Remover Vagas" severity="danger" />
+
+    </div>
+
+  </div>
+
+  } @else {
+  <app-loading></app-loading>
+  }
+
+</div>

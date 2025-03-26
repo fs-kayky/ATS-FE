@@ -1,0 +1,140 @@
+<div class="whole_page">
+
+  <div class="content_container">
+
+    <div class="job_title">
+      {{jobInfo?.title}}
+    </div>
+
+    <div class="table">
+
+      <div class="table_title">
+        {{totalCandidates}} Candidatos
+      </div>
+
+      <p-tabView>
+
+        <p-tabPanel header="{{totalCandidates}} Todos">
+          <p-table [value]="jobCandidates" sortField="match" [sortOrder]="-1" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+              <tr>
+                <th>Nome do Candidato</th>
+                <th>Match com a Vaga</th>
+                <th>Score</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-candidate>
+              <tr>
+                <td>{{candidate.name}}</td>
+                <td>{{candidate.match}} %</td>
+                <td><p-rating cancel="false" readonly="true" [(ngModel)]="candidate.score" /></td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </p-tabPanel>
+
+        <p-tabPanel header="{{totalJobRej}} Rejeitados">
+          <p-table [value]="jobsRejected" sortField="match" [sortOrder]="-1" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+              <tr>
+                <th>Nome do Candidato</th>
+                <th>Match com a Vaga</th>
+                <th>Score</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-candidate>
+              <tr>
+                <td>{{candidate.name}}</td>
+                <td>{{candidate.match}} %</td>
+                <td><p-rating cancel="false" readonly="true" [(ngModel)]="candidate.score" /></td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </p-tabPanel>
+
+        <p-tabPanel header="{{totalJobPreAprov}} Pré-Aprovados">
+          <p-table [value]="jobsPreAproved" sortField="match" [sortOrder]="-1" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+              <tr>
+                <th>Nome do Candidato</th>
+                <th>Match com a Vaga</th>
+                <th>Score</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-candidate>
+              <tr>
+                <td>{{candidate.name}}</td>
+                <td>{{candidate.match}} %</td>
+                <td><p-rating cancel="false" readonly="true" [(ngModel)]="candidate.score" /></td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </p-tabPanel>
+
+        <p-tabPanel header="{{totalJobRevision}} Recomendado Revisão">
+          <p-table [value]="jobsRevision" sortField="match" [sortOrder]="-1" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+              <tr>
+                <th>Nome do Candidato</th>
+                <th>Match com a Vaga</th>
+                <th>Score</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-candidate>
+              <tr>
+                <td>{{candidate.name}}</td>
+                <td>{{candidate.match}} %</td>
+                <td><p-rating cancel="false" readonly="true" [(ngModel)]="candidate.score" /></td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </p-tabPanel>
+
+        <p-tabPanel header="{{totalJobP2P}} Entrevistados P2P">
+          <p-table [value]="jobsP2P" sortField="match" [sortOrder]="-1" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+              <tr>
+                <th>Nome do Candidato</th>
+                <th>Match com a Vaga</th>
+                <th>Score</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-candidate>
+              <tr>
+                <td>{{candidate.name}}</td>
+                <td>{{candidate.match}} %</td>
+                <td><p-rating cancel="false" readonly="true" [(ngModel)]="candidate.score" /></td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </p-tabPanel>
+
+        <p-tabPanel header="{{totalJobOfferted}} Ofertados">
+          <p-table [value]="jobsOfferted" sortField="match" [sortOrder]="-1" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+              <tr>
+                <th>Nome do Candidato</th>
+                <th>Match com a Vaga</th>
+                <th>Score</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-candidate>
+              <tr>
+                <td>{{candidate.name}}</td>
+                <td>{{candidate.match}} %</td>
+                <td><p-rating cancel="false" readonly="true" [(ngModel)]="candidate.score" /></td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </p-tabPanel>
+
+
+      </p-tabView>
+
+    </div>
+
+
+
+  </div>
+
+</div>

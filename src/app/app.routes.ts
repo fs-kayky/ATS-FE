@@ -3,15 +3,23 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'candidate-views',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
-    path: 'candidate-views',
-    loadComponent: () => import('./modules/candidates/view-candidates/view-candidates.component').then(m => m.ViewCandidatesComponent)
+    path: 'home',
+    loadComponent: () => import('./modules/global/pages/home/home.component').then(m => m.HomeComponent)
+  },
+  {
+    path: 'role-managment',
+    loadComponent: () => import('./modules/roles/pages/management/management.component').then(m => m.ManagementComponent)
+  },
+  {
+    path: 'job-managment/:jobId',
+    loadComponent: () => import('./modules/jobs/pages/jobs-managment/jobs-managment.component').then(m => m.JobsManagmentComponent)
   },
   {
     path: '**',
-    redirectTo: 'candidate-views'
+    redirectTo: 'home'
   }
 ];

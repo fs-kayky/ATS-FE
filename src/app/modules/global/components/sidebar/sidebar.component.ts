@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { SidebarService } from '../../services/sidebar/sidebar.service';
 import { CommonModule } from '@angular/common';
 import { SidebarModule } from 'primeng/sidebar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,6 +14,7 @@ import { SidebarModule } from 'primeng/sidebar';
 export class SidebarComponent implements OnInit {
 
   private sidebarService = inject(SidebarService)
+  private router = inject(Router)
   isOpen!: boolean;
 
   ngOnInit(): void {
@@ -31,5 +33,11 @@ export class SidebarComponent implements OnInit {
     this.sidebarService.toggle()
   }
 
+  goTo(path: string) {
+
+    this.router.navigate([path])
+    this.toggleSidebar()
+
+  }
 
 }
